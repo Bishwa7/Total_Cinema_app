@@ -76,7 +76,7 @@ npx expo start
 npm install nativewind tailwindcss react-native-reanimated react-native-safe-area-context
 ```
 
-- TailwindCss (Installation process)
+- TailwindCss (Installation process) (visit [Nativewind](https://www.nativewind.dev/docs/getting-started/installation) for guidance)
 
 <br/>
 
@@ -98,7 +98,7 @@ tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // NOTE: Update this to include the paths to all files that contain Nativewind classes.
-  content: ["./App.tsx", "./components/**/*.{js,jsx,ts,tsx}"],
+  content: ["./App.tsx", "./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {},
@@ -164,7 +164,25 @@ module.exports = withNativeWind(config, { input: './app/global.css' })
 
 <br/>
 
-- Typescript setup (for nativewind/tailwindcss)
+import your css file 
+
+<br/>
+
+./app/_layout.tsx
+
+```typescript
+import { Stack } from "expo-router";
+import "./global.css";  // add this
+
+export default function RootLayout() {
+  return <Stack />;
+}
+```
+
+
+<br/>
+
+- Typescript setup (for nativewind/tailwindcss) mentioned in [Nativewind](https://www.nativewind.dev/docs/getting-started/installation)
 
 <br/>
 
